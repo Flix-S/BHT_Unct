@@ -5,8 +5,6 @@ Uncertainty based model to correct Bottom Hole Temperatures of deep wells to sta
 This Python tool is designed to estimate the formation temperature from thermally disturbed Bottom Hole Temperatures (BHTs). BHT data are usually of poor quality, therefore it is important to take into account the uncertainty of the required input parameters to the different models that can be qpplied for correction. This tool allows for specifying the quality of input data (uncertainty range), performing a Saltelli sampling (Saltellis extension of Sobol) and running one of six conventional BHT correction schemes.
 The output is provided as density distribution of the result space. p10, p50, p90 or modal value can be used to describe the corrected temperature value with its uncertainty, dependent on the input ranges.
 
-For at least two BHT available, the user can switch between Horner method, Lachenbruch&Brewer, Brennand method, Forward modelling or linearized model.
-For only one BHT available, a 1BHT correction scheme after Goetzl () is applied.
 
 # Licence
 BHT_Unct is distributed under the GNU GENERAL PUBLIC LICENSE v3.
