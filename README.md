@@ -1,4 +1,4 @@
-# BHT_Unc
+# BHT_Unct
 Uncertainty based model to correct Bottom Hole Temperatures of deep wells to static formation temperatures with conventional analytical and numerical correction methods.
 
 # About
@@ -9,7 +9,7 @@ For at least two BHT available, the user can switch between Horner method, Lache
 For only one BHT available, a 1BHT correction scheme after Goetzl () is applied.
 
 # Licence
-BHT_Unc is distributed under the GNU GENERAL PUBLIC LICENSE v3.
+BHT_Unct is distributed under the GNU GENERAL PUBLIC LICENSE v3.
 
 # Usage
 User input is requested in the file BHT_Correction.py. 
