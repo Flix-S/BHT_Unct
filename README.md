@@ -5,11 +5,21 @@ Uncertainty based model to correct Bottom Hole Temperatures of deep wells to sta
 This Python tool is designed to estimate the formation temperature from thermally disturbed Bottom Hole Temperatures (BHTs). BHT data are usually of poor quality, therefore it is important to take into account the uncertainty of the required input parameters to the different models that can be qpplied for correction. This tool allows for specifying the quality of input data (uncertainty range), performing a Saltelli sampling (Saltellis extension of Sobol) and running one of six conventional BHT correction schemes.
 The output is provided as density distribution of the result space. p10, p50, p90 or modal value can be used to describe the corrected temperature value with its uncertainty, dependent on the input ranges.
 
+# Required Python packages
+- numpy         (https://numpy.org/install/)
+- pandas        (https://pandas.pydata.org/getting_started.html)
+- SALib         (Herman, J. and Usher, W. (2017) SALib: An open-source Python library for sensitivity analysis. Journal of Open Source Software, 2(9).
+                 doi:10.21105/joss.00097, https://salib.readthedocs.io/en/latest/getting-started.html)
+- plotly        (https://plotly.com/python/getting-started/)
+- matpolotlib   (https://matplotlib.org/stable/users/getting_started/)
+- seaborn       (https://seaborn.pydata.org/installing.html)
+- numba         (https://numba.readthedocs.io/en/stable/user/installing.html)
+- scipy         (https://docs.scipy.org/doc/scipy/getting_started.html)
 
 # Licence
 BHT_Unct is distributed under the GNU GENERAL PUBLIC LICENSE v3.
 
-# important files
+# Important files
 BHT_Unct.py         main file. User input is requested here
 bht_functions.py    includes BHT correction methods
 Iterativ_Goetzl.py  includes the iterative solved Linearization method. It is highly recommended to use multiprocessing if Linearization method is used.
@@ -34,4 +44,6 @@ User input is requested in the file BHT_Unct.py.
 
 After the script is run, the Sobol results (first order index, second order index and total order index) will be saved into the folder "SobolInformationen"
 Under "plots" the main result (density and box plot) will be saved including expected value (median, p50), worst-case (p10) and best-case prediction (p90) as well as the ranges p50-p10 and p90-p50 that can be used to describe the uncertainty of the expected value.
+![SFT BM Test Well low quality data set](https://user-images.githubusercontent.com/100127267/180166957-5f90873e-d5d5-469c-9654-e3bba8b3aeac.png)
+
 Under "sobol_plots", the user can check the Sobol plots for convergence of the respective model. If the total order index does still change with increasing number of samples, the user should extend the list "sample_variation" and rerun the model.
