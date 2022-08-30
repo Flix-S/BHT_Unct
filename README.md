@@ -41,6 +41,11 @@ User input is requested in the file BHT_Unct.py.
     if quality_ts = "med":   uncertainty is +/- 30min
     if quality_ts = "high":  uncertainty is +/- 15min    
 - Specify the number of samples for Saltelli sampling in the list "sample_variation"
+- The distributions of the input parameters can be changed in the problem definition.
+  For our dataset we used uniform distributions for BHT, shut-in temperature, thermal diffusivity. For the circulation time, borehole radius and the Mud temperature,  
+  we used triangular distributions. Note that for non-uniform distributions, the lower bound of the respective parameter has to be added to the defined problem range
+  before the parameter is given to the respective model. Check https://waterprogramming.wordpress.com/2016/02/25/salib-v0-7-1-group-sampling-nonuniform-distributions/ 
+  for further details.
 
 After the script is run, the Sobol results (first order index, second order index and total order index) will be saved into the folder "SobolInformationen"
 Under "plots" the main result (density and box plot) will be saved including expected value (median, p50), worst-case (p10) and best-case prediction (p90) as well as the ranges p50-p10 and p90-p50 that can be used to describe the uncertainty of the expected value.
